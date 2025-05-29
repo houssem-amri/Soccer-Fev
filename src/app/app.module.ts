@@ -38,6 +38,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PlayersComponent } from './components/players/players.component';
+import { NewComComponent } from './components/new-com/new-com.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { PlayersComponent } from './components/players/players.component';
     LoginComponent,
     NotFoundComponent,
     PlayersComponent,
+    NewComComponent,
   ],
   imports: [
     BrowserModule,
