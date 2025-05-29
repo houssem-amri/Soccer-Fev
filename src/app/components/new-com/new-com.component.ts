@@ -12,4 +12,7 @@ export class NewComComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  testhichem(){
+    console.log("test hichem");
+  }
 }
