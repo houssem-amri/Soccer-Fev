@@ -15,4 +15,8 @@ export class NewComComponent implements OnInit {
   testhichem(){
     console.log("test hichem");
   }
+
+    testhoussem(){
+    console.log("test hichem");
+  }
 }
