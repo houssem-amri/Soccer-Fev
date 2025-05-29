@@ -1,0 +1,38 @@
+<app-banner  [title]="'Players'" [url]="'assets/images/bg_2.jpg'" ></app-banner>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="form-group col-4">
+                <input type="number"  [(ngModel)]="data.min" name="a" class="form-control" placeholder="Team One">
+              </div>
+              <div class="form-group col-4">
+                <input type="number"  [(ngModel)]="data.max" name="b" class="form-control" placeholder="Team One">
+              </div>
+              <div class="form-group col-4">
+                <button type="button" (click)="filterPlayer()" class="btn btn-primary py-3 px-5" >Search</button>
+            </div>
+
+        </div>
+      <div class="row">
+
+      
+
+        
+        <div class="col-lg-6" *ngFor="let p of players">
+            <div class="custom-media d-flex">
+              <div class="img mr-4">
+                <img [src]="p.image" alt="Image" class="img-fluid">
+              </div>
+              <div class="text">
+                <h3 class="mb-4"><a href="#">{{p.name}}</a></h3>
+                <h5 class="mb-4"><a href="#">{{p.post}}</a></h5>
+                <h5 class="mb-4"><a href="#">{{p.number}}</a></h5>
+                <p><a href="#">Read more</a></p>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+    </div>
+  </div>

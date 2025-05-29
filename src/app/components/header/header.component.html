@@ -1,0 +1,57 @@
+
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+  <header class="site-navbar py-4" role="banner">
+
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="site-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+        <div class="ml-auto">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li class="active"><a routerLink="/" class="nav-link">Home</a></li>
+              <li class="active" *ngIf="isLogged() && connectedUser?.role =='admin'">
+                <div class="dropdown">
+                  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Admin
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" routerLink="/add-match">Add Match</a></li>
+                    <li><a class="dropdown-item" routerLink="/add-team">Add Team</a></li>
+                    <li><a class="dropdown-item" routerLink="/add-player">Add Player</a></li>
+                 
+                  </ul>
+                </div>
+              </li>
+        
+           
+              <li  *ngIf="isLogged() && connectedUser?.role =='admin'" ><a routerLink="/dashboard" class="nav-link">Dashboard Admin</a></li>
+              <li  *ngIf="isLogged() && connectedUser?.role =='user'" ><a routerLink="/teams" class="nav-link">Teams</a></li>
+
+              <li  ><a routerLink="/contact" class="nav-link">Contact</a></li>
+              <li  *ngIf="!isLogged()"><a routerLink="/signup" class="nav-link">Signup</a></li>
+              <li  *ngIf="!isLogged()"><a routerLink="/login" class="nav-link">Login</a></li>
+              <li  *ngIf="isLogged()"><a (click)="logout()" class="nav-link">Logout</a></li>
+              <li  *ngIf="isLogged()"><a  class="nav-link">{{connectedUser.username}}</a></li>
+            </ul>
+          </nav>
+
+          <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+              class="icon-menu h3 text-white"></span></a>
+        </div>
+      </div>
+    </div>
+
+  </header>

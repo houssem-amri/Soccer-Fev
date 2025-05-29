@@ -1,0 +1,52 @@
+
+
+  
+  <div class="container m-2">
+    <div class="row">
+
+      <div class="col-lg-12">
+        <h5 class="text-center">Table Players</h5>
+
+      </div>
+      <div class="col-lg-12">
+          
+          <div class="widget-next-match">
+            <table class="table custom-table">
+              <thead>
+                <tr>
+                  <th>Player Image</th>
+                  <th>Player Name</th>
+                  <th>Player Post</th>
+                  <th>Player Number</th>
+                  <th>Team Name</th>
+                  <th>Action</th>
+            
+          
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of players ; let i = index" appColor>            
+                  <td>
+                    <img [src]="p.image" width="75px" alt="player image">
+                  </td>
+                  <td><strong class="text-white">{{p.name}}</strong></td>
+                  <td><strong class="text-white">{{p.post}}</strong></td>
+                  <td>{{p.number }}</td>
+                  <td>{{p.teamId.name }}</td>
+                  <td>
+                    <button [routerLink]="['/edit-player/',p._id]" class="btn btn-info">Edit</button>
+                  </td>
+                 
+                
+                </tr>
+            
+           
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+    </div>
+  </div>

@@ -1,0 +1,58 @@
+
+
+  
+  <div class="container m-2">
+    <div class="row">
+
+      <div class="col-lg-12">
+        <h5 class="text-center">Table Matches</h5>
+
+      </div>
+      <div class="col-lg-12">
+          
+          <div class="widget-next-match">
+            <table class="table custom-table">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Team One</th>
+                  <th>Team Two</th>
+                  <th>Score One</th>
+                  <th>Score Two</th>
+                  <th>Action</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let m of matches ; let i = index" appColor>            
+                  <td>{{m.id}}</td>
+                  <td><strong class="text-white">{{m.teamOne}}</strong></td>
+                  <td><strong class="text-white">{{m.teamTwo}}</strong></td>
+                  <td>{{m.scoreOne}}</td>
+                  <td>{{m.scoreTwo}}</td>
+                  <td>
+                    <button class="btn btn-danger mr-2"  (click)="deleteMatch(m._id)">
+                      <i class="fas fa-trash"></i>
+                    </button>
+
+                    <button class="btn btn-info mr-2"  (click)="navigateTo(m._id , '/edit-match/')" >
+                      <i class="fas fa-pen"></i>
+                    </button>
+
+                    
+                    <button class="btn btn-warning"  (click)="navigateTo(m._id , '/match-info/')" >
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                
+                </tr>
+            
+           
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+    </div>
+  </div>

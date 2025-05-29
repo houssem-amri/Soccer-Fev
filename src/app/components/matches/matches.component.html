@@ -1,0 +1,20 @@
+
+<app-banner  [title]="'Matches'" [url]="'assets/images/bg_1.jpg'" ></app-banner>
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <input type="text" name="a"  [(ngModel)]="term"  class="form-control" placeholder="Search">
+
+
+        </div>
+
+        <div class="col-lg-12" *ngFor="let m of matches | myFilter:term">
+            <app-match [match]="m"   (passIdMatch)="deleteMatchParent($event)"></app-match>
+        </div>
+  
+      </div>
+    </div>
+  </div>

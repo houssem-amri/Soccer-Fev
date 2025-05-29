@@ -1,0 +1,55 @@
+
+
+  
+  <div class="container m-2">
+    <div class="row">
+
+      <div class="col-lg-12">
+        <h5 class="text-center">Table Teams</h5>
+
+      </div>
+      <div class="col-lg-12">
+          
+          <div class="widget-next-match">
+            <table class="table custom-table">
+              <thead>
+                <tr>
+                  <th>Team Name</th>
+                  <th>Team Country</th>
+                  <th>Team Date</th>
+            
+                  <th>Action</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let t of teams ; let i = index" appColor>            
+                  <td><strong class="text-white">{{t.name}}</strong></td>
+                  <td><strong class="text-white">{{t.country}}</strong></td>
+                  <td>{{t.date | date:'medium'}}</td>
+                  <td>
+                    <button class="btn btn-danger mr-2"  (click)="deleteTeam(t._id)">
+                      <i class="fas fa-trash"></i>
+                    </button>
+
+                    <button class="btn btn-info mr-2"  (click)="navigateTo(t._id , '/edit-team/')" >
+                      <i class="fas fa-pen"></i>
+                    </button>
+
+                    
+                    <button class="btn btn-warning"  (click)="navigateTo(t._id , '/match-info/')" >
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                
+                </tr>
+            
+           
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+    </div>
+  </div>

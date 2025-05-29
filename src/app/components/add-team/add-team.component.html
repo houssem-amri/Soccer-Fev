@@ -1,0 +1,29 @@
+
+<app-banner  [title]="title" [url]="'assets/images/bg_2.jpg'" ></app-banner>
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form class="row" (ngSubmit)="addEditTeam()" >
+            <div class="form-group col-6">
+              <input type="text"  [(ngModel)]="team.name" name="a" class="form-control" placeholder="Team name">
+            </div>
+            <div class="form-group col-6">
+              <input type="text"   [(ngModel)]="team.country" name="b" class="form-control"  placeholder="Team Country">
+            </div>
+            <div class="form-group col-6">
+              <input type="date" [(ngModel)]="team.date"  class="form-control" name="c" placeholder="Team Date ">
+            </div>
+       
+          
+            <div class="form-group col-12">
+                <button type="submit" class="btn btn-primary py-3 px-5" >{{title}}</button>
+            </div>
+
+          </form>  
+        </div>
+  
+      </div>
+    </div>
+  </div>
